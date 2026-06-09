@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sanskar Shimpi — ML Systems & Distributed Infrastructure</title>
+<meta name="description" content="ML systems and distributed infrastructure engineer. MSCS @ NYU Tandon. Builder of DriftSentinel, AgentMemOS, LineageIQ. Open to Summer 2027 internships." />
+<meta name="theme-color" content="#0B0A08" />
+<meta property="og:title" content="Sanskar Shimpi — ML Systems & Distributed Infrastructure" />
+<meta property="og:description" content="5,537 req/s gRPC data plane · 0.45-hr drift MTTD · 314 tests across three shipped systems · merged upstream in LangChain-Neo4j." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B0A08'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23FFB454' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23FFB454'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ======================= STATUS BAR ======================= -->
+<header class="statusbar" role="banner">
+  <a class="brand" href="#top" aria-label="Back to top">SANSKAR.SHIMPI<span class="cursor" aria-hidden="true">▮</span></a>
+  <div class="statusbar-right">
+    <span class="sb-item sb-clock"><span id="clock">--:--:--</span> NYC</span>
+    <span class="sb-sep" aria-hidden="true">·</span>
+    <span class="sb-item"><i class="led led-ok" aria-hidden="true"></i>OPEN · S27</span>
+    <button class="sb-item sb-kbd" id="palette-btn" aria-haspopup="dialog" aria-controls="palette">⌘K</button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="hero" aria-label="Introduction">
+  <canvas id="topology" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="eyebrow mono rv">$ whoami</p>
+    <h1 class="rv">SANSKAR<br/>SHIMPI</h1>
+    <p class="role mono rv">ML SYSTEMS · DISTRIBUTED INFRASTRUCTURE · QUANT-ADJACENT</p>
+    <p class="lede rv">I build the machinery around models — drift detection, agent memory, data lineage — and load-test it until the numbers are worth printing. Incoming M.S. CS at NYU Tandon. Open to <strong>Summer 2027 internships</strong> in ML systems, infra, and quantitative tech.</p>
+    <nav class="bracket-links rv" aria-label="Profiles">
+      <a href="https://github.com/Sanskar121543" target="_blank" rel="noopener">[ github ]</a>
+      <a href="https://linkedin.com/in/sanskar0153" target="_blank" rel="noopener">[ linkedin ]</a>
+      <a href="https://medium.com/@sanskar.shimpi" target="_blank" rel="noopener">[ medium ]</a>
+      <a href="assets/Sanskar_Shimpi_Resume.pdf" target="_blank" rel="noopener">[ résumé ]</a>
+      <a href="mailto:sanskar.shimpi@gmail.com">[ email ]</a>
+    </nav>
+    <p class="hero-hint mono rv">topology: live stack graph · drag nothing, just scroll ↓</p>
+  </div>
+</section>
+
+<!-- ======================= TELEMETRY ======================= -->
+<section class="telemetry" aria-label="Headline metrics">
+  <div class="tele-grid">
+    <div class="tele rv">
+      <div class="tele-v"><span class="count" data-target="5537" data-sep="1">5,537</span><i>req/s</i></div>
+      <div class="tele-k">peak gRPC throughput — AgentMemOS</div>
+    </div>
+    <div class="tele rv">
+      <div class="tele-v"><span class="count" data-target="2.23" data-dec="2">2.23</span><i>ms P95</i></div>
+      <div class="tele-k">read latency under load — AgentMemOS</div>
+    </div>
+    <div class="tele rv">
+      <div class="tele-v"><span class="count" data-target="314">314</span><i>tests</i></div>
+      <div class="tele-k">green across three shipped systems</div>
+    </div>
+    <div class="tele rv">
+      <div class="tele-v">4<i>PRs</i></div>
+      <div class="tele-k">upstream · 1 merged, all CI passing</div>
+    </div>
+    <div class="tele rv">
+      <div class="tele-v">TOP 4%<i>/ 18,800+</i></div>
+      <div class="tele-k">IMC Prosperity 4 — manual trading</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= SERVICES (PROJECTS) ======================= -->
+<section class="panel" id="services" aria-labelledby="services-h">
+  <div class="panel-head rv">
+    <span class="panel-id mono">SVC/01</span>
+    <h2 id="services-h">Services</h2>
+    <span class="panel-meta mono"><i class="led led-ok" aria-hidden="true"></i>3 systems · all CI green</span>
+  </div>
+
+  <div class="svc-grid">
+
+    <article class="svc rv" aria-label="DriftSentinel">
+      <header class="svc-head">
+        <span class="svc-name mono"><i class="led led-ok" aria-hidden="true"></i>driftsentinel</span>
+        <span class="svc-dates mono">AUG–NOV 2025</span>
+      </header>
+      <p class="svc-desc">ML observability on Kafka + Spark Structured Streaming. Five drift detectors voting in parallel — KS, Chi², PSI, Jensen-Shannon, SHAP-Delta — feeding a cost-aware retraining selector and SPRT-gated canary promotion (5→20→50→100%) with auto-rollback on latency or error regression.</p>
+      <svg class="spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,30 18,28 34,31 50,12 62,26 78,8 92,24 110,6 126,20 142,18 160,19 180,18 200,18" /></svg>
+      <div class="svc-stats mono">
+        <div><b>0.45 hr</b><span>MTTD</span></div>
+        <div><b>9×</b><span>vs 4-hr baseline</span></div>
+        <div><b>121</b><span>tests</span></div>
+        <div><b>90–100%</b><span>core coverage</span></div>
+      </div>
+      <div class="chips mono">
+        <span>kafka</span><span>spark</span><span>mlflow</span><span>shap</span><span>k8s</span><span>terraform</span><span>aws</span>
+      </div>
+      <footer class="svc-links mono">
+        <a href="https://github.com/Sanskar121543/DriftSentinel" target="_blank" rel="noopener" data-todo="verify-repo-url">repo ↗</a>
+        <a href="https://medium.com/@sanskar.shimpi" target="_blank" rel="noopener">writeup ↗</a>
+      </footer>
+    </article>
+
+    <article class="svc rv" aria-label="AgentMemOS">
+      <header class="svc-head">
+        <span class="svc-name mono"><i class="led led-ok" aria-hidden="true"></i>agentmemos</span>
+        <span class="svc-dates mono">APR–JUN 2026 · v0.1.0</span>
+      </header>
+      <p class="svc-desc">A four-tier memory OS for LLM agents — Redis, Pinecone, Neo4j, PostgreSQL — with parallel cross-tier read fan-out, a 5-signal importance-scored write router, semantic-LRU eviction with ghost tombstones, Kafka WAL for durable writes, and an OPA/Rego federation engine for cross-agent access control and PII redaction.</p>
+      <svg class="spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,32 20,30 38,27 56,26 72,22 90,21 106,16 124,14 140,12 158,9 176,7 200,4" /></svg>
+      <div class="svc-stats mono">
+        <div><b>5,537</b><span>req/s async gRPC</span></div>
+        <div><b>2.23 ms</b><span>P95</span></div>
+        <div><b>4</b><span>storage tiers</span></div>
+        <div><b>100</b><span>tests</span></div>
+      </div>
+      <div class="chips mono">
+        <span>grpc</span><span>asyncio</span><span>redis</span><span>pinecone</span><span>neo4j</span><span>postgres</span><span>opa/rego</span>
+      </div>
+      <footer class="svc-links mono">
+        <a href="https://github.com/Sanskar121543/AgentMemOS" target="_blank" rel="noopener" data-todo="verify-repo-url">repo ↗</a>
+      </footer>
+    </article>
+
+    <article class="svc rv" aria-label="LineageIQ">
+      <header class="svc-head">
+        <span class="svc-name mono"><i class="led led-ok" aria-hidden="true"></i>lineageiq</span>
+        <span class="svc-dates mono">JAN–MAR 2026</span>
+      </header>
+      <p class="svc-desc">Column-level lineage engine parsing dbt, Spark, SQL, and Kafka metadata into a Neo4j graph. A blast-radius analyzer scores schema-change impact by SLA tier, freshness cadence, and downstream fan-out; a Text2Cypher layer with a static schema validator blocks hallucinated labels and all write operations before execution.</p>
+      <svg class="spark" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,24 16,24 30,10 44,23 60,22 76,8 90,22 108,21 122,12 138,22 154,21 170,9 184,20 200,19" /></svg>
+      <div class="svc-stats mono">
+        <div><b>1,389</b><span>req/s</span></div>
+        <div><b>44 ms</b><span>P95 · 50-VU k6</span></div>
+        <div><b>93</b><span>tests</span></div>
+        <div><b>0</b><span>writes past validator</span></div>
+      </div>
+      <div class="chips mono">
+        <span>neo4j</span><span>fastapi</span><span>kafka</span><span>postgres</span><span>redis</span><span>react</span><span>k6</span>
+      </div>
+      <footer class="svc-links mono">
+        <a href="https://github.com/Sanskar121543/LineageIQ" target="_blank" rel="noopener" data-todo="verify-repo-url">repo ↗</a>
+      </footer>
+    </article>
+
+  </div>
+</section>
+
+<!-- ======================= CAREER LOG ======================= -->
+<section class="panel" id="career" aria-labelledby="career-h">
+  <div class="panel-head rv">
+    <span class="panel-id mono">LOG/02</span>
+    <h2 id="career-h">Career</h2>
+    <span class="panel-meta mono">$ git log --graph --oneline</span>
+  </div>
+
+  <ol class="commits mono" id="commit-rail">
+    <div class="rail" aria-hidden="true"><span class="rail-fill" id="rail-fill"></span></div>
+
+    <li class="commit commit-future rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">f0a1e2d</span> <span class="c-ref">(HEAD → nyc, tag: summer-2027)</span>
+        <span class="c-date">2027-06</span>
+        <p class="c-msg">target: ML systems / infra / quant internship — slot open</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">9c4b7aa</span><span class="c-date">2026-09</span>
+        <p class="c-msg">feat(edu): begin M.S. Computer Science @ NYU Tandon</p>
+        <p class="c-detail sans">Distributed Systems · ML Systems · Advanced ML · Big Data — Brooklyn, NY.</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">7e21b4d</span><span class="c-date">2026-06</span>
+        <p class="c-msg">release(agentmemos): v0.1.0 open-sourced — 5,537 req/s · P95 2.23 ms</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">3d8f5c1</span><span class="c-date">2026-06</span>
+        <p class="c-msg">merge(oss): langchain-neo4j #119 accepted upstream</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">b2e9d04</span><span class="c-date">2026-04</span>
+        <p class="c-msg">chore(edu): B.Tech CSE complete @ VIT — GPA 3.68/4.0</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">5a7c3f8</span><span class="c-date">2026-03</span>
+        <p class="c-msg">ship(lineageiq): column-level lineage — 1,389 req/s · 44 ms P95</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">e1f4a9b</span><span class="c-date">2026</span>
+        <p class="c-msg">perf(imc-prosperity-4): top 4% manual · top 6% overall · 18,800+ teams</p>
+        <p class="c-detail sans">Team Wolf of All Streets.</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">c6d2e7f</span><span class="c-date">2025-11</span>
+        <p class="c-msg">ship(driftsentinel): 5-method drift consensus — MTTD 0.45 hr, 9× faster</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">8b3a1d5</span><span class="c-date">2025-01</span>
+        <p class="c-msg">feat(isro-vit): CV for aerospace weld radiography — mAP@0.5 0.883</p>
+        <p class="c-detail sans">YOLOv8, 300+ epochs @ 640×640 · ISRO LPSC Letter of Appreciation for core system development.</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">4f9e6c2</span><span class="c-date">2024-06</span>
+        <p class="c-msg">exp(acumen-dubai): JWT payments layer — p50 −30% · errors −40% · 2K+ tx/day</p>
+      </div>
+    </li>
+
+    <li class="commit rv">
+      <span class="node" aria-hidden="true"></span>
+      <div class="c-body">
+        <span class="c-hash">0a1b2c3</span><span class="c-date">2022-09</span>
+        <p class="c-msg">init: B.Tech Computer Science @ VIT Vellore</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ======================= OPEN SOURCE ======================= -->
+<section class="panel" id="oss" aria-labelledby="oss-h">
+  <div class="panel-head rv">
+    <span class="panel-id mono">OSS/03</span>
+    <h2 id="oss-h">Upstream</h2>
+    <span class="panel-meta mono">4 PRs · 1 merged · CI ✓ on all</span>
+  </div>
+
+  <div class="oss-table mono rv" role="table" aria-label="Open source pull requests">
+    <a class="oss-row" role="row" href="https://github.com/langchain-ai/langchain-neo4j/pull/119" target="_blank" rel="noopener">
+      <span class="oss-repo">langchain-ai / langchain-neo4j</span>
+      <span class="oss-pr">#119</span>
+      <span class="oss-note sans">feature + tests</span>
+      <span class="badge badge-merged">MERGED</span>
+      <span class="oss-ci">CI ✓</span>
+    </a>
+    <a class="oss-row" role="row" href="https://github.com/mlflow/mlflow/pull/23147" target="_blank" rel="noopener">
+      <span class="oss-repo">mlflow / mlflow</span>
+      <span class="oss-pr">#23147</span>
+      <span class="oss-note sans">+103 lines</span>
+      <span class="badge badge-open">OPEN</span>
+      <span class="oss-ci">CI ✓</span>
+    </a>
+    <a class="oss-row" role="row" href="https://github.com/apache/airflow/pull/66648" target="_blank" rel="noopener">
+      <span class="oss-repo">apache / airflow</span>
+      <span class="oss-pr">#66648</span>
+      <span class="oss-note sans">+64 lines</span>
+      <span class="badge badge-open">OPEN</span>
+      <span class="oss-ci">CI ✓</span>
+    </a>
+    <a class="oss-row" role="row" href="https://github.com/fastapi/fastapi/pull/15496" target="_blank" rel="noopener">
+      <span class="oss-repo">fastapi / fastapi</span>
+      <span class="oss-pr">#15496</span>
+      <span class="oss-note sans">bug fix + regression suite</span>
+      <span class="badge badge-open">OPEN</span>
+      <span class="oss-ci">CI ✓</span>
+    </a>
+  </div>
+</section>
+
+<!-- ======================= EXPERIENCE / EDUCATION ======================= -->
+<section class="panel" id="experience" aria-labelledby="exp-h">
+  <div class="panel-head rv">
+    <span class="panel-id mono">EXP/04</span>
+    <h2 id="exp-h">Experience</h2>
+    <span class="panel-meta mono">research · industry · education</span>
+  </div>
+
+  <div class="exp-grid">
+    <article class="exp rv">
+      <h3>Research Engineer, Computer Vision</h3>
+      <p class="exp-org mono">ISRO–VIT COLLABORATIVE RESEARCH · JAN 2025 – JUN 2026</p>
+      <p class="sans">Production CV pipeline for aerospace weld radiography: CLAHE + sharpening + denoise enhancement feeding YOLOv8 — <b>mAP@0.5 0.883</b>, precision 0.890, F1 0.86 across porosity, LOF, and linear-pore classes. Per-defect ROI feature extraction with MySQL-backed traceability. ISRO LPSC <b>Letter of Appreciation</b> for core system development.</p>
+    </article>
+
+    <article class="exp rv">
+      <h3>Backend Developer Intern</h3>
+      <p class="exp-org mono">ACUMEN ADVERTISING DMCC · DUBAI · JUN – JUL 2024</p>
+      <p class="sans">JWT auth layer for VoucherSkout's payment integrations (Samsung Pay, Noon Pay, Emirates NBD): p50 latency <b>−30%</b> (200→150 ms), error rate <b>−40%</b> across 2K+ daily transactions; unit-test coverage raised to 70%.</p>
+    </article>
+
+    <article class="exp rv">
+      <h3>Education</h3>
+      <p class="exp-org mono">NYU TANDON · M.S. COMPUTER SCIENCE · 2026 – 2028</p>
+      <p class="sans">Distributed Systems, ML Systems, Advanced ML, Big Data. F-1 — CPT-eligible Summer 2027, OPT-eligible May 2028.</p>
+      <p class="exp-org mono" style="margin-top:14px">VIT VELLORE · B.TECH CSE · 2022 – 2026</p>
+      <p class="sans">GPA 3.68/4.0.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ======================= STACK ======================= -->
+<section class="panel" id="stack" aria-labelledby="stack-h">
+  <div class="panel-head rv">
+    <span class="panel-id mono">CFG/05</span>
+    <h2 id="stack-h">Stack</h2>
+    <span class="panel-meta mono">~/stack.yaml</span>
+  </div>
+
+  <pre class="yaml mono rv" aria-label="Technology stack"><span class="y-c"># stack.yaml — tools I ship with</span>
+<span class="y-k">languages</span>:   [<span class="y-v">python</span>, <span class="y-v">c++</span>, <span class="y-v">sql</span>]
+<span class="y-k">systems</span>:     [<span class="y-v">kafka</span>, <span class="y-v">spark</span>, <span class="y-v">grpc</span>, <span class="y-v">asyncio</span>, <span class="y-v">redis</span>, <span class="y-v">neo4j</span>, <span class="y-v">postgresql</span>, <span class="y-v">opa/rego</span>]
+<span class="y-k">ml</span>:          [<span class="y-v">pytorch</span>, <span class="y-v">scikit-learn</span>, <span class="y-v">mlflow</span>, <span class="y-v">shap</span>, <span class="y-v">pinecone</span>, <span class="y-v">langchain</span>, <span class="y-v">rag</span>, <span class="y-v">yolov8</span>]
+<span class="y-k">infra</span>:       [<span class="y-v">docker</span>, <span class="y-v">kubernetes</span>, <span class="y-v">terraform</span>, <span class="y-v">prometheus</span>, <span class="y-v">grafana</span>, <span class="y-v">otel</span>, <span class="y-v">gh-actions</span>, <span class="y-v">aws</span>]
+<span class="y-k">foundations</span>: [<span class="y-v">distributed-systems</span>, <span class="y-v">system-design</span>, <span class="y-v">algorithms</span>, <span class="y-v">linux</span>, <span class="y-v">git</span>]</pre>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<footer class="contact" id="contact">
+  <p class="eyebrow mono rv">$ ping sanskar</p>
+  <h2 class="contact-h rv">OPEN TO SUMMER 2027<br/>INTERNSHIPS.</h2>
+  <p class="sans rv contact-sub">ML systems · distributed infrastructure · quantitative tech — New York City.</p>
+  <div class="contact-actions rv">
+    <button class="btn-copy mono" id="copy-email" data-email="sanskar.shimpi@gmail.com">copy email</button>
+    <a class="btn-ghost mono" href="assets/Sanskar_Shimpi_Resume.pdf" target="_blank" rel="noopener">résumé ↗</a>
+  </div>
+  <nav class="bracket-links rv" aria-label="Profiles">
+    <a href="https://github.com/Sanskar121543" target="_blank" rel="noopener">[ github ]</a>
+    <a href="https://linkedin.com/in/sanskar0153" target="_blank" rel="noopener">[ linkedin ]</a>
+    <a href="https://medium.com/@sanskar.shimpi" target="_blank" rel="noopener">[ medium ]</a>
+  </nav>
+  <p class="fineprint mono">hand-rolled HTML/CSS/JS · custom canvas 3D renderer · zero JS dependencies · ≈51 KB<br/>© 2026 Sanskar Shimpi · New York City</p>
+</footer>
+
+</main>
+
+<!-- ======================= COMMAND PALETTE ======================= -->
+<div class="palette-backdrop" id="palette-backdrop" hidden></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+  <input class="palette-input mono" id="palette-input" type="text" placeholder="type a command — try 'sudo hire'" autocomplete="off" spellcheck="false" />
+  <ul class="palette-list mono" id="palette-list" role="listbox"></ul>
+  <p class="palette-hint mono">↑↓ navigate · ↵ run · esc close</p>
+</div>
+
+<div class="toast mono" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
